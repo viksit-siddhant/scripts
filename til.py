@@ -4,9 +4,7 @@ import sys
 
 new = False
 limit = 10
-reddit = praw.Reddit(client_id='ewfGJb9d_oD_Pg',
-                     client_secret='2nb3H02fWJLzuTJ1_qWG_hErgno',
-                     user_agent='Script by /u/Sid299792')
+reddit = praw.Reddit('bot1',user_agent='Script by /u/Sid299792')
 
 for i,arg in enumerate(sys.argv):
     if arg == '-n':
