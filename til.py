@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import praw
 import sys
+import subprocess
 
 new = False
 limit = 10
@@ -29,16 +30,32 @@ else:
     list_sub = list(reddit.subreddit('todayilearned').new(limit=limit,params=params))
 
 if not nsfw:
-    for submission in list_sub:
+    for i,submission in enumerate(list_sub):
         sub_nsfw = False
         for word in fltr:
             if word in submission.title:
                 sub_nsfw = True
                 break
         if not sub_nsfw:
-            print(submission.title + '\n')
+            print(f'{i+1}. {submission.title}\n')
 else:
-    for submission in list_sub:
-        print(submission.title + '\n')
+    for i,submission in enumerate(list_sub):
+        print(f'{i+1}. {submission.title}\n')
 
+while True:
+    a = input('>')
+    num_of_link = 0
+    if a == 'help':
+        with open('help','r') as f:
+            print(f.read())
+    elif a == 'quit':
+        break
+    else:
+        try:
+            num_of_link = int(a) - 1
+        except ValueError:
+            print('Enter "help" for help')
+        else:
+            subprocess.run(['w3m',list_sub[num_of_link].url])
 
+sys.exit(0)
