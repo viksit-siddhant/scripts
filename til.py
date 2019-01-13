@@ -37,10 +37,10 @@ if not nsfw:
                 sub_nsfw = True
                 break
         if not sub_nsfw:
-            print(f'{i+1}. {submission.title}\n')
+            print(f'{i+1}. {submission.title[3:]}\n')
 else:
     for i,submission in enumerate(list_sub):
-        print(f'{i+1}. {submission.title}\n')
+        print(f'{i+1}. {submission.title[3:]}\n')
 
 while True:
     a = input('>')
