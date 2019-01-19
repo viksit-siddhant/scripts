@@ -12,11 +12,14 @@ def loop(list_sub):
             break
         elif a == 'view':
             subprocess.run(['w3m',list_sub[num_of_link].url])
-        elif a == 'comments':
+        elif a.split(' ')[0] == 'comments':
+            lim_com = 5
+            if len(a.split(' ')) > 1:
+                lim_com = int(a.split(' ')[1])
             for i,comment in enumerate(list_sub[num_of_link].comments):
                 print(comment.body)
                 print('#'*100)
-                if i == 5:
+                if i+1 == lim_com:
                     break
 
         else:
