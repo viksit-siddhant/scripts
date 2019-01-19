@@ -1,3 +1,5 @@
-Enter 'help' for this help message
-Enter the number of the title to see that in detail
-Enter 'quit' or press Ctrl+C to quit
+Enter "help" for this help message
+Enter the number of the title to select that piece
+After you have selected the piece, enter "view" to view that piece in detail
+You can also read the comments by entering "comments" followed by the number of comments(defaults to 5)
+Enter "quit" or press Ctrl+C to quit
