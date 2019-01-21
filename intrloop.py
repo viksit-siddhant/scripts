@@ -1,8 +1,9 @@
 import praw
 import subprocess
+import __main__
 
-num_of_link = 1
 def loop(list_sub):
+    num_of_link = 1
     while True:
         a = input('>')
         if a == 'help':
@@ -21,6 +22,10 @@ def loop(list_sub):
                 print('#'*100)
                 if i+1 == lim_com:
                     break
+        elif a.split(' ')[0] == 'change':
+            list_sub = __main__.pull_from_sub(a.split(' ')[1])
+            for i,submission in enumerate(list_sub):
+                print(f'{i+1}. {submission.title}\n')
 
         else:
             try:
