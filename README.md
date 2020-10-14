@@ -1,4 +1,4 @@
-a script for accessing subreddits, viewing their links, and reading comments, all from the command line
+a script for accessing subreddits, viewing their links, and reading comments, all from the command line. Run as `python intrloop.py [Options]`
 
 dependencies:
     w3m
@@ -9,8 +9,8 @@ Also, you need to register a script under the Reddit API and create a praw.ini f
 For more information on how to do that, read the PRAW docs.
 
 available options:
-    -f      allow nsfw content
-    -n      sort by new (default sorting is by hot)
-    -l      set the number of posts to view (default is 10)
+    `-f`      allow nsfw content
+    `-n`      sort by new (default sorting is by hot)
+    `-l`      set the number of posts to view (default is 10)
 
 After you have run the script, enter the name of sub you want to browse and press Enter
